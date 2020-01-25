@@ -48,13 +48,16 @@ export function createSocketChannel({ eventType }: CreateSocketChannel) {
   })
 }
 
-export function* readSocketChannel({ eventType, actionCreator }: CreateSocketChannel) {
+export function* readSocket({ eventType, actionCreator }: CreateSocketChannel) {
   const channel = yield call(createSocketChannel, { eventType })
   while (true) {
     const message = yield take(channel)
-    if (actionCreator) {
+    if (actionCreator && message) {
       yield put(actionCreator(message))
+    } else if (actionCreator) {
+      yield put(actionCreator())
     }
+    return message
   }
 }
 

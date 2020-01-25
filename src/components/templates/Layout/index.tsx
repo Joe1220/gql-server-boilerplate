@@ -2,7 +2,6 @@ import * as React from "react"
 import Link from "next/link"
 import Head from "next/head"
 import styles from "./_Layout.scss"
-import List from "src/components/List"
 
 type Props = {
   /** Description of prop "foo". */
@@ -32,7 +31,6 @@ const Layout: React.FC<Props> = ({ children, title = "This is the default title"
       </nav>
     </header>
     {children}
-    <List items={[]} />
     <footer>
       <hr />
       <span>I'm here to stay (Footer)</span>

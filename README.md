@@ -1,6 +1,12 @@
 # NEXT REDUX SCSS BOILERPLATE
 
-next기반의 frontend boilerplate 입니다.
+next기반의 timer(clinet)입니다.
+
+###
+
+next관련 보일러 플레이트[https://github.com/Joe1220/next-redux-scss-bp]사용
+
+###
 
 #### install
 
