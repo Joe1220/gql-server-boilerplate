@@ -56,9 +56,9 @@ yarn style # start styleguidist for project
 
 ### - Testing
 
-setting both enzyme, react-testing-library. you should select one(or both)
+react-testing-library
 
-[jest](https://jestjs.io/docs/en/getting-started.html), [react-testing-library](https://github.com/testing-library/react-testing-library), [enzyme](https://airbnb.io/enzyme/),
+[jest](https://jestjs.io/docs/en/getting-started.html), [react-testing-library](https://github.com/testing-library/react-testing-library),
 [axios-mock-adapter](https://www.npmjs.com/package/axios-mock-adapter)
 
 ---

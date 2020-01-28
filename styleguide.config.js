@@ -1,7 +1,12 @@
 module.exports = {
   propsParser: require("react-docgen-typescript").parse,
   webpackConfig: Object.assign({}, require("./docs/webpack.style.config.js"), {}),
-  ignore: ["**/*.test.{ts, tsx, js}", "**/*.spec.{ts, tsx, js}"],
+  ignore: [
+    "**/__tests__/**",
+    "**/*.test.{js,jsx,ts,tsx}",
+    "**/*.spec.{js,jsx,ts,tsx}",
+    "**/*.d.ts"
+  ],
   styleguideDir: "docs.build",
   sections: [
     {
