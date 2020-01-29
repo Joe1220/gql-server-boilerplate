@@ -2,10 +2,10 @@
 
 // import 구문으로 이루어진 main scss
 /* abstracts */
-@import "abstracts/_variables.scss";
-@import "abstracts/_mixin.scss";
-@import "abstracts/_placeholders.scss";
+@import "src/styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_mixin.scss";
+@import "src/styles/abstracts/_placeholders.scss";
 
 /* base */
-@import "base/_reset.scss";
-@import "base/_base.scss";
+@import "src/styles/base/_reset.scss";
+@import "src/styles/base/_base.scss";

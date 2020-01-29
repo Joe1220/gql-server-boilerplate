@@ -12,6 +12,10 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />

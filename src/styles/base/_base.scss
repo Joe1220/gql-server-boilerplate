@@ -1,12 +1,20 @@
 // css reset 모음
 html {
+  height: 100%;
   box-sizing: border-box;
 }
 
 body {
-  font: normal $text-font-stack;
+  font: normal $base-font-stack;
 }
 
 a {
   text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    cursor: pointer;
+    color: $black;
+  }
 }
