@@ -1,5 +1,5 @@
 import { MouseEvent } from "react"
 
 export type IButton = {
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
+  onClick?: (event: MouseEvent) => void | any
 }

@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   propsParser: require("react-docgen-typescript").parse,
   webpackConfig: Object.assign({}, require("./docs/webpack.style.config.js"), {}),
@@ -7,6 +9,9 @@ module.exports = {
     "**/*.spec.{js,jsx,ts,tsx}",
     "**/*.d.ts"
   ],
+  styleguideComponents: {
+    Wrapper: path.join(__dirname, "docs/Wrapper")
+  },
   styleguideDir: "docs.build",
   sections: [
     {

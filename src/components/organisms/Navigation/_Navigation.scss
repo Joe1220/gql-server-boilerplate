@@ -1,0 +1,9 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.o__nav__container {
+  background: $light-blue;
+  padding: $display-padding;
+  .o__nav__link {
+    color: $white;
+  }
+}

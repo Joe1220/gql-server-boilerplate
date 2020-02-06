@@ -1,22 +1,16 @@
 @import "src/styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_mixin.scss";
 
 .a__btn {
+  @include btn--base;
   display: inline-block;
   border: 1px solid currentColor;
   border-radius: 4px;
   font-size: 14px;
-  background: $white;
-  text-align: center;
-  vertical-align: middle;
-  word-spacing: normal;
-  margin: 0;
-  padding: 0.5rem 1.5rem;
-  cursor: pointer;
 }
 
 .a__btn--full {
+  @include btn--base;
   display: block;
-  text-align: center;
-  padding: 0;
   width: 100%;
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import App from "next/App"
+import App from "next/app"
 import { Provider } from "react-redux"
 import { PersistGate } from "redux-persist/integration/react"
 import withRedux from "next-redux-wrapper"
@@ -7,7 +7,7 @@ import withRedux from "next-redux-wrapper"
 import initialStore, { PersistedStore } from "src/store"
 import "src/styles/index.scss"
 
-interface IProps {
+export interface IProps {
   store: PersistedStore
 }
 

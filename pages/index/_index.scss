@@ -1,0 +1,11 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.mainpage__btn--reset {
+  background: $accent-yellow;
+  color: $white;
+}
+
+.mainpage__btn--start {
+  background: $base-blue;
+  color: $white;
+}

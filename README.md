@@ -50,9 +50,9 @@ yarn style # start styleguidist for project
 
 [styleguidist](https://github.com/styleguidist/react-styleguidist)
 
-### - Style Guid
+### - Style Guid & Icon
 
-[Styleguidist](https://github.com/styleguidist/react-styleguidist)
+[Styleguidist](https://github.com/styleguidist/react-styleguidist)[react-fontawesome](https://github.com/FortAwesome/react-fontawesome)
 
 ### - Testing
 
@@ -62,6 +62,11 @@ react-testing-library
 [axios-mock-adapter](https://www.npmjs.com/package/axios-mock-adapter)
 
 ---
+
+## Icon 사용
+
+[react-fontawesome](https://github.com/FortAwesome/react-fontawesome)
+string props를 사용하기 위해 우선 atoms/Icon내에서 import사용 필요. (나머지 Icon md파일 확인)
 
 ## **Structure**
 
