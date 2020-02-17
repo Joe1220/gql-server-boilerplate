@@ -174,5 +174,7 @@ $RECYCLE.BIN/
 
 # styleguidist
 styleguide
+docs.build/
+*.snap
 
 # End of https://www.gitignore.io/api/node,sass,react,macos,windows

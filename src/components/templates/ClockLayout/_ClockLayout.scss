@@ -1,0 +1,25 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.t__clocklayout__container {
+  height: 80vh;
+  width: 100%;
+  min-width: $max-width;
+  button:not(:last-child) {
+    margin-right: 10px;
+  }
+  .t__clocklayout__content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: $display-padding;
+    font-family: "DS-Digital";
+    .t__clocklayout__miles {
+      font-size: $font-size-lg;
+    }
+    .t__clocklayout__clock {
+      font-size: $font-size-xlg;
+    }
+  }
+}
