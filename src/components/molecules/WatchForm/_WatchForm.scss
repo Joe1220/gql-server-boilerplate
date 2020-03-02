@@ -1,0 +1,20 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.m__watch__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $watch-font-stack;
+  .m__watch__milliseconds {
+    font-size: $font-size-lg;
+    &.small {
+      font-size: $font-size-base;
+    }
+  }
+  .m__watch__clock {
+    font-size: $font-size-xlg;
+    &.small {
+      font-size: $font-size-base;
+    }
+  }
+}

@@ -1,21 +1,37 @@
 @import "src/styles/abstracts/_variables.scss";
 
 .t__clocklayout__container {
-  height: 80vh;
+  min-height: 90vh;
   width: 100%;
   min-width: $max-width;
+  overflow-x: hidden;
   button:not(:last-child) {
     margin-right: 10px;
   }
   .t__clocklayout__content {
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+
     padding: $display-padding;
-    font-family: "DS-Digital";
-    .t__clocklayout__miles {
+    font-family: $watch-font-stack;
+    overflow-y: auto;
+    .t__clocklayout__panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 300px;
+      span:first-child {
+        margin-bottom: 20px;
+      }
+    }
+    .t__clocklayout__subs {
+      margin-top: $display-content-margin;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .t__clocklayout__milliseconds {
       font-size: $font-size-lg;
     }
     .t__clocklayout__clock {

@@ -1,0 +1,20 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.o__watchlabs__container {
+  text-align: left;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: $font-size-base;
+  cursor: pointer;
+  td,
+  tr,
+  th {
+    padding: 5px 20px;
+  }
+  td {
+    text-align: center;
+  }
+  .o__watchlabs__head {
+    font-family: $base-font-stack;
+  }
+}
