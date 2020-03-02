@@ -1,6 +1,10 @@
 import { combineReducers } from "redux"
 
-const rootReducer = combineReducers({})
+import time from "src/store/modules/time"
+
+const rootReducer = combineReducers({
+  time
+})
 
 export default rootReducer
 

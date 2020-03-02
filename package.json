@@ -15,7 +15,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "type-check": "tsc",
-    "style": "styleguidist server",
+    "style": "styleguidist -p 6977 -s ./public server",
     "style:build": "styleguidist build"
   },
   "dependencies": {
@@ -64,8 +64,10 @@
     "jest": "^24.9.0",
     "postcss": "^7.0.25",
     "react-docgen-typescript": "^1.16.1",
+    "redux-saga-test-plan": "^4.0.0-rc.3",
     "ts-jest": "^24.2.0",
-    "typescript": "3.6.3"
+    "typescript": "3.6.3",
+    "url-loader": "^3.0.0"
   },
   "license": "ISC",
   "browserslist": [

@@ -1,7 +1,7 @@
 import { all, fork } from "redux-saga/effects"
 
-import watchSocketSaga from "src/store/modules/socket/sagas"
+import watchTimeSaga from "src/store/modules/time/sagas"
 
 export default function*() {
-  yield all([fork(watchSocketSaga)])
+  yield all([fork(watchTimeSaga)])
 }
