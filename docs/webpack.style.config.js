@@ -18,6 +18,17 @@ module.exports = {
         }
       },
       {
+        test: /\.jpe?g$|\.gif$|\.ico$|\.png$|\.svg|\.woff(2)?|\.eot|\.ttf/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[md5:hash:hex:6].[ext]"
+            }
+          }
+        ]
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
