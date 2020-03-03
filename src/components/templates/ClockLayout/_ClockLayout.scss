@@ -1,9 +1,14 @@
 @import "src/styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_mixin.scss";
 
 .t__clocklayout__container {
   min-height: 90vh;
   width: 100%;
   min-width: $max-width;
+  @include responsive--breakpoint($tablet-landscape-min) {
+    max-height: 100px;
+    min-width: 100%;
+  }
   overflow-x: hidden;
   button:not(:last-child) {
     margin-right: 10px;
@@ -20,7 +25,10 @@
       justify-content: center;
       flex-direction: column;
       margin-top: 300px;
-      span:first-child {
+      @include responsive--breakpoint($tablet-portrait-max) {
+        margin-top: 100px;
+      }
+      span {
         margin-bottom: 20px;
       }
     }
@@ -30,12 +38,6 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-    }
-    .t__clocklayout__milliseconds {
-      font-size: $font-size-lg;
-    }
-    .t__clocklayout__clock {
-      font-size: $font-size-xlg;
     }
   }
 }

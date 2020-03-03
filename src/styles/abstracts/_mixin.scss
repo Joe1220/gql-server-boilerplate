@@ -8,3 +8,32 @@
   padding: 0.5rem 1.5rem;
   cursor: pointer;
 }
+
+/* portrait: 세로, landscape: 가로 */
+@mixin responsive--breakpoint($media) {
+  @if $media == $tablet-landscape-min {
+    @media (max-width: $tablet-landscape-min) {
+      @content;
+    }
+  } @else if $media == $tablet-portrait-max {
+    @media (max-width: $tablet-portrait-max) {
+      @content;
+    }
+  } @else if $media == $tablet-portrait-min {
+    @media (min-width: $tablet-portrait-min) {
+      @content;
+    }
+  } @else if $media == $phone-landscape-max {
+    @media (max-width: $phone-landscape-max) {
+      @content;
+    }
+  } @else if $media == $phone-portrait-max {
+    @media (max-width: $phone-portrait-max) {
+      @content;
+    }
+  } @else if $media == $phone-landscape-min {
+    @media (min-width: $phone-landscape-min) {
+      @content;
+    }
+  }
+}

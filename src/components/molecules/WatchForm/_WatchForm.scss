@@ -1,4 +1,5 @@
 @import "src/styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_mixin.scss";
 
 .m__watch__container {
   display: flex;
@@ -8,13 +9,23 @@
   .m__watch__milliseconds {
     font-size: $font-size-lg;
     &.small {
+      font-size: $font-size-sm;
+    }
+    @include responsive--breakpoint($phone-landscape-max) {
       font-size: $font-size-base;
     }
   }
   .m__watch__clock {
     font-size: $font-size-xlg;
-    &.small {
+    @include responsive--breakpoint($tablet-portrait-max) {
+      font-size: $font-size-lg;
+      margin: 0;
+    }
+    @include responsive--breakpoint($phone-landscape-max) {
       font-size: $font-size-base;
+    }
+    &.small {
+      font-size: $font-size-sm;
     }
   }
 }
