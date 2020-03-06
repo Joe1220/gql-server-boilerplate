@@ -1,0 +1,36 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.m__menutoggle__container {
+  position: relative;
+  display: inline-block;
+  svg {
+    cursor: pointer;
+  }
+  .m__menutoggle__dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    min-width: 240px;
+    overflow-y: none;
+    padding: $display-padding;
+    box-shadow: $base-shadow;
+    background: $light-grey;
+    &-enter {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    &-enter-active {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 300ms, transform 300ms;
+    }
+    &-exit {
+      opacity: 1;
+    }
+    &-exit-active {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 300ms, transform 300ms;
+    }
+  }
+}

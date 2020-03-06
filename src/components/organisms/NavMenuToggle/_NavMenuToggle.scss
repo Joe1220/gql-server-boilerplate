@@ -1,0 +1,16 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.o__navi__dropdown {
+  .o__navi__link {
+    color: $white;
+    font-size: $font-size-base;
+    &:hover,
+    &:focus {
+      color: $light-blue;
+      text-emphasis: none;
+    }
+    p {
+      margin: $display-padding;
+    }
+  }
+}

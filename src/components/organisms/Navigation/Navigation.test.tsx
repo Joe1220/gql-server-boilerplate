@@ -1,7 +1,7 @@
 import React from "react"
 import { render } from "@testing-library/react"
 import Navigation from "./"
-import { appTitle } from "src/constants/config"
+import { appTitle } from "src/shared/config"
 
 describe("<Navigation />", () => {
   it("matches snapshot", () => {

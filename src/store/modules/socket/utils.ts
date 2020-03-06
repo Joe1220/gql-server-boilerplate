@@ -1,7 +1,7 @@
 import IO from "socket.io-client"
 import { eventChannel } from "redux-saga"
 
-import { baseUrl } from "src/constants/sockets"
+import { baseUrl } from "src/shared/config"
 import { CreateSocketChannel } from "./types"
 import { take, put, call } from "redux-saga/effects"
 

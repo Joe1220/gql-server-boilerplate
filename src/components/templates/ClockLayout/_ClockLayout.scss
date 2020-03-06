@@ -4,7 +4,6 @@
 .t__clocklayout__container {
   min-height: 90vh;
   width: 100%;
-  min-width: $max-width;
   @include responsive--breakpoint($tablet-landscape-min) {
     max-height: 100px;
     min-width: 100%;
