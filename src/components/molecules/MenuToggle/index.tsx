@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
 import { CSSTransition } from "react-transition-group"
 
 import Icon from "src/components/atoms/Icon"
@@ -11,15 +11,13 @@ type IProps = {
 
 const MenuToggle: React.FC<IProps> = ({ children }) => {
   const [isHide, setIsHide] = useState(false)
-  const _ref = useRef<HTMLDivElement>(null)
-  const handleHide = (value?: boolean) => {
-    if (value) {
-      setIsHide(value)
-    } else {
-      setIsHide(!isHide)
-    }
+  const handleHide = () => {
+    setIsHide(!isHide)
   }
-  useOutsideClick(_ref, handleHide)
+  const handleHideFalse = () => {
+    setIsHide(false)
+  }
+  const { _ref } = useOutsideClick(handleHideFalse)
   return (
     <div className={styles["m__menutoggle__container"]} ref={_ref}>
       <span onClick={() => handleHide()} data-testid="toggle_button">
