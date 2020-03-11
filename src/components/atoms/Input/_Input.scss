@@ -1,0 +1,12 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.a__input__container {
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  height: 0.8rem;
+  font-size: 1rem;
+  padding: $display-padding;
+  background: $white;
+  border: $base-border;
+  border-radius: $base-border-radius;
+}

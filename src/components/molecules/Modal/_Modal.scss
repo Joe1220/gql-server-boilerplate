@@ -1,0 +1,42 @@
+@import "src/styles/abstracts/_variables.scss";
+
+.m__modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: $modal-overlay;
+  padding-top: 100px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: none;
+  &.showing {
+    display: inline-block;
+  }
+  .m__modal__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    background-color: $white;
+    padding: $display-padding;
+    &-enter {
+      opacity: 0;
+    }
+    &-enter-active {
+      opacity: 1;
+      transition: opacity 300ms, transform 300ms;
+    }
+    &-exit {
+      opacity: 1;
+    }
+    &-exit-active {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 300ms, transform 300ms;
+    }
+  }
+}
