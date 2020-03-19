@@ -1,20 +1,16 @@
-import React from "react"
+import React, { useRef } from "react"
 import classNames from "classnames/bind"
 import { CSSTransition } from "react-transition-group"
 
 import styles from "./_Modal.scss"
 import { useOutsideClick } from "src/shared/hooks"
+import { IModalProps } from "./types"
 
 const cx = classNames.bind(styles)
 
-type IProps = {
-  children: React.ReactNode
-  handleClose: () => void
-  isShow: boolean
-}
-
-const Modal: React.FC<IProps> = ({ handleClose, isShow = false, children }) => {
-  const { _ref } = useOutsideClick(handleClose)
+const Modal: React.FC<IModalProps> = ({ handleClose, isShow = false, children }) => {
+  const _ref = useRef<HTMLDivElement>(null)
+  useOutsideClick(handleClose, _ref)
   return (
     <div
       className={cx("m__modal__overlay", {
