@@ -3,7 +3,6 @@ import Select from "react-select"
 import { ISelectProps } from "./types"
 
 const CustomSelect: React.FC<ISelectProps> = ({
-  onChange,
   options = [{ value: "", label: "" }],
   ...props
 }) => {

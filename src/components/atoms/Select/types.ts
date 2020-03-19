@@ -1,11 +1,9 @@
 import { Props as ReactSelectProps } from "react-select"
 
-type SelectOptionValue = any
-
-interface SelectOption {
+export interface SelectOption {
   label: string
   options?: SelectOption[]
-  value?: SelectOptionValue
+  value?: any
 }
 
 export type ISelectProps = ReactSelectProps<SelectOption> & {

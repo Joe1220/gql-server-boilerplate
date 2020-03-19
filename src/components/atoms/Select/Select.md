@@ -1,5 +1,7 @@
 Base Select:
 
+react-select library
+
 ```jsx
 import Select from "./"
 const textOptions = [
