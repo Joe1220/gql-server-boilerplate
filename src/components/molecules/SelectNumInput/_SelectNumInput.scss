@@ -1,0 +1,28 @@
+@import "src/styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_mixin.scss";
+
+.m__selectnum__container {
+  align-items: center;
+  justify-content: center;
+  .m__selectnum__label {
+    display: block;
+    margin-bottom: $display-content-margin;
+  }
+  .m__selectnum__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .m__selectnum__select {
+      display: inline-block;
+      height: $base-select-height;
+    }
+    .m__selectnum__btn {
+      height: $base-select-height;
+      background: $light-grey;
+      color: $white;
+      margin: 0;
+      @include hover--color--change($base-grey);
+      @include base--disabled--btn();
+    }
+  }
+}
