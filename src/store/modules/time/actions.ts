@@ -1,4 +1,5 @@
 import { deprecated } from "typesafe-actions"
+import { TIMER_AUDIO_EDIT } from "./types"
 
 import {
   TIME_STOP_START,
@@ -27,3 +28,4 @@ export const timerReset = createStandardAction(TIMER_RESET)<void>()
 export const timerStop = createStandardAction(TIMER_STOP)<void>()
 export const timerEdit = createStandardAction(TIMER_EDIT)<number>()
 export const timerResetEdit = createStandardAction(TIMER_RESET_EDIT)<number>()
+export const timerAudioEdit = createStandardAction(TIMER_AUDIO_EDIT)<string>()

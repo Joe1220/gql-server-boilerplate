@@ -1,0 +1,28 @@
+@import "src/styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_mixin.scss";
+
+.m__selectaudio__container {
+  align-items: center;
+  justify-content: center;
+  .m__selectaudio__label {
+    display: block;
+    margin-bottom: $display-content-margin;
+  }
+  .m__selectaudio__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .m__selectaudio__select {
+      display: inline-block;
+      height: $base-select-height;
+    }
+    .m__selectaudio__btn {
+      height: $base-select-height;
+      background: $light-grey;
+      color: $white;
+      margin: 0;
+      @include hover--color--change($base-grey);
+      @include base--disabled--btn();
+    }
+  }
+}

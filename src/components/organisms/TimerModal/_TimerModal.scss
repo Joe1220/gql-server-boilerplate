@@ -1,0 +1,11 @@
+@import "src/styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_mixin.scss";
+
+.o__timermodal__title {
+  margin-bottom: $display-content-margin;
+}
+
+.o__timermodal__btn {
+  @include base--disabled--btn();
+  @include hover--color--change($base-blue);
+}

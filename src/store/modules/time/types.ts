@@ -13,6 +13,9 @@ export type Timer = {
   milliseconds: number
   resetMilliseconds: number
   isRunning: boolean
+  audioPlaying: boolean
+  /** src 경로 */
+  audio: string | null
 }
 
 export type TimerTime = "hour" | "minute" | "second"
@@ -30,6 +33,7 @@ export const TIMER_STOP = "time/TIMER_STOP"
 export const TIMER_RESET = "time/TIMER_RESET"
 export const TIMER_EDIT = "time/TIMER_EDIT"
 export const TIMER_RESET_EDIT = "time/TIMER_RESET_EDIT"
+export const TIMER_AUDIO_EDIT = "time/TIMER_AUDIO_EDIT"
 
 export type TimeState = {
   timer: Timer

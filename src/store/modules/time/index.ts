@@ -14,11 +14,18 @@ import {
   TIMER_STOP,
   TIMER_EDIT,
   TIMER_TICK,
-  TIMER_RESET_EDIT
+  TIMER_RESET_EDIT,
+  TIMER_AUDIO_EDIT
 } from "./types"
 
 const initialState: TimeState = {
-  timer: { milliseconds: TIMER_RESET_TIME, resetMilliseconds: TIMER_RESET_TIME, isRunning: false },
+  timer: {
+    milliseconds: TIMER_RESET_TIME,
+    resetMilliseconds: TIMER_RESET_TIME,
+    isRunning: false,
+    audio: null,
+    audioPlaying: false
+  },
   timeStop: { milliseconds: 0, startNow: 0, isRunning: false, labs: [] }
 }
 
@@ -103,6 +110,14 @@ export default createReducer<TimeState, TimeAction>(initialState, {
     timer: {
       ...state.timer,
       resetMilliseconds: action.payload
+    }
+  }),
+  [TIMER_AUDIO_EDIT]: (state, action) => ({
+    ...state,
+    timer: {
+      ...state.timer,
+      audioPlaying: false,
+      audio: action.payload
     }
   })
 })

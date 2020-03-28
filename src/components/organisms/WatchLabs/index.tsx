@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import WatchForm from "src/components/molecules/WatchForm"
+import TimeForm from "src/components/molecules/TimeForm"
 import styles from "./_WatchLabs.scss"
 import { handleSort } from "src/store/modules/time/utils"
 
@@ -29,7 +29,7 @@ const WatchLabs: React.FC<IProps> = ({ labs }) => {
             <tr key={index}>
               <td>{lab.index}</td>
               <td>
-                <WatchForm milliseconds={lab.value} size="small" />
+                <TimeForm milliseconds={lab.value} size="small" />
               </td>
             </tr>
           ))}
