@@ -7,9 +7,11 @@ import timeSaga, {
   getTimeStopStartNow,
   getTimerRunning,
   handleTimerRequest,
-  getTimerTotal
+  getTimerTotal,
+  countdown,
+  timerStopFork
 } from "./sagas"
-import { timeStopStart, timeStopStop, timerStart, timerTick, timerStop } from "./actions"
+import { timeStopStart, timeStopStop, timerStart } from "./actions"
 
 describe("time stop saga module test", () => {
   it("time saga(time stop) run when taking start type", () => {
@@ -46,16 +48,16 @@ describe("timer saga module test", () => {
   it("run when isRunning value is true, and 'false' is not running", () => {
     const isTimeBiggerThanZero = "time is big"
     const saga = testSaga(handleTimerRequest)
+    const testCountNum = 10000
     saga
-      .next()
-      .select(getTimerRunning)
-      .next(true)
+      .next(testCountNum)
       .select(getTimerTotal)
+      .next(testCountNum)
+      .call(countdown, testCountNum)
+      .next(true)
+      .fork(timerStopFork, true)
+      .next(true)
+      .select(getTimerRunning)
       .save(isTimeBiggerThanZero)
-      .next(1000)
-      .put(timerTick())
-      .restore(isTimeBiggerThanZero)
-      .next(-1000)
-      .put(timerStop())
   })
 })

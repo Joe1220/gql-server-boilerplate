@@ -1,4 +1,4 @@
-import { put, select, delay, take, call, takeEvery } from "redux-saga/effects"
+import { put, select, delay, take, call, takeEvery, fork } from "redux-saga/effects"
 
 import {
   timeStopTick,
@@ -8,10 +8,10 @@ import {
   timerEdit,
   timerStop
 } from "./actions"
-import { TIME_STOP_START, TIMER_START } from "./types"
+import { TIME_STOP_START, TIMER_START, TIMER_STOP } from "./types"
 import { RootState } from "src/store/reducer"
 import { MILLISECONDS_DEALY, MILLISECONDS_SECOND } from "./config"
-import { eventChannel, END } from "redux-saga"
+import { eventChannel, END, EventChannel } from "redux-saga"
 
 export const getTimeStopRunning = (state: RootState) => state.time.timeStop.isRunning
 export const getTimeStopStartNow = (state: RootState) => state.time.timeStop.startNow
@@ -37,7 +37,7 @@ export function* handleTimeStopRequest() {
   }
 }
 
-function countdown(secs: number) {
+export function countdown(secs: number) {
   return eventChannel(emitter => {
     const iv = setInterval(() => {
       secs -= MILLISECONDS_SECOND
@@ -54,19 +54,29 @@ function countdown(secs: number) {
   })
 }
 
+export function* timerStopFork(chan: EventChannel<any>) {
+  yield take(TIMER_STOP)
+  yield put(timerStop())
+  chan.close()
+}
+
 export function* handleTimerRequest() {
+  const timeTotal = yield select(getTimerTotal)
+  const chan = yield call(countdown, timeTotal)
+
+  yield fork(timerStopFork, chan)
   try {
-    const timeTotal = yield select(getTimerTotal)
-    const chan = yield call(countdown, timeTotal)
     while (true) {
-      const timeState = yield select(getTimerRunning)
-      if (timeState) {
+      if (yield select(getTimerRunning)) {
         const secs = yield take(chan)
         yield put(timerEdit(secs))
-      } else {
-        yield put(timerStop())
-        break
       }
+      // stop이벤트가 발생되어도 secs가 minus되는 issue로 인해, 위해서 fork로 stop이벤트 처리
+      // else {
+      //   chan.close()
+      //   yield put(timerStop())
+      //   break
+      // }
     }
   } catch (error) {
     console.log("time stop error: ", error)
