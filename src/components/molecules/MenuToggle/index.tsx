@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react"
 import { CSSTransition } from "react-transition-group"
 
-import Icon from "src/components/atoms/Icon"
+import Icon from "src/components/atoms/BaseIcon"
 import styles from "./_MenuToggle.scss"
 import { useOutsideClick } from "src/shared/hooks"
 

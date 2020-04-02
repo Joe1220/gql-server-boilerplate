@@ -6,9 +6,9 @@ import scssStyles from "./_SelectAudio.scss"
 import Button from "src/components/atoms/Button"
 import { ISelectAudio } from "./types"
 import styles from "./SelectAudio.styles"
-import Icon from "src/components/atoms/Icon"
+import Icon from "src/components/atoms/BaseIcon"
 import Audio from "src/components/atoms/Audio"
-import { useAudioHooks } from "./hooks"
+import { useAudioHooks } from "src/components/atoms/Audio/hooks"
 
 const cx = classNames.bind(scssStyles)
 
