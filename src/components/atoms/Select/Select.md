@@ -9,7 +9,17 @@ const textOptions = [
   { value: "cat", label: "Cat" },
   { value: "hamster", label: "Hamster" }
 ]
+
+const customClick = event => {
+  console.log("test")
+}
+
 ;<div>
-  <Select placeholder="test" options={textOptions} placeholder={"select your value"} />
+  <Select
+    placeholder="test"
+    options={textOptions}
+    placeholder={"select your value"}
+    onEnded={customClick}
+  />
 </div>
 ```

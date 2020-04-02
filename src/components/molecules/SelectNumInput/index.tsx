@@ -3,6 +3,7 @@ import Select from "src/components/atoms/Select"
 import classNames from "classnames/bind"
 
 import scssStyles from "./_SelectNumInput.scss"
+import Icon from "src/components/atoms/BaseIcon"
 import Button from "src/components/atoms/Button"
 import { ISelectNumInputProps } from "./types"
 import styles from "./SelectNumInput.styles"
@@ -30,7 +31,7 @@ const SelectNumInput: React.FC<ISelectNumInputProps> = ({
           onClick={minusChange}
           disabled={minusDisbled}
         >
-          DOWN
+          <Icon icon={"minus"} />
         </Button>
         <Select
           styles={styles}
@@ -46,7 +47,7 @@ const SelectNumInput: React.FC<ISelectNumInputProps> = ({
           onClick={addChange}
           disabled={addDisabled}
         >
-          UP
+          <Icon icon={"plus"} />
         </Button>
       </span>
     </div>

@@ -9,6 +9,7 @@
   align-items: baseline;
   width: 100%;
   .o__nav__content--desktop {
+    display: flex;
     @include responsive--breakpoint($phone-landscape-max) {
       display: none;
     }
@@ -20,5 +21,9 @@
   }
   .o__nav__link {
     color: $white;
+    &:not(:last-child) {
+      margin-right: $display-lg-margin;
+    }
+    @include hover--color--change($base-grey);
   }
 }

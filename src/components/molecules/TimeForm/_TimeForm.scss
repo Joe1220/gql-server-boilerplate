@@ -11,6 +11,9 @@
     &.small {
       font-size: $font-size-sm;
     }
+    &.lg {
+      font-size: $font-size-lg;
+    }
     @include responsive--breakpoint($phone-landscape-max) {
       font-size: $font-size-lg;
     }
@@ -26,6 +29,9 @@
     }
     &.small {
       font-size: $font-size-sm;
+    }
+    &.lg {
+      font-size: $font-size-lg;
     }
   }
 }
