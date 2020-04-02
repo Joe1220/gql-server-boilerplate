@@ -9,14 +9,21 @@
     min-width: 100%;
   }
   overflow-x: hidden;
-  button:not(:last-child) {
+  .t__clocklayout__title {
+    color: $light-grey;
+    opacity: 0.6;
+    font-size: $font-size-lg;
+    margin-bottom: $display-lg-margin;
+    @include responsive--breakpoint($tablet-landscape-min) {
+      font-size: $font-size-base;
+    }
+  }
+  .t__clocklayout__btn {
     margin-right: 10px;
   }
   .t__clocklayout__content {
     height: 100%;
-
     padding: $display-padding;
-    font-family: $watch-font-stack;
     overflow-y: auto;
     .t__clocklayout__panel {
       display: flex;

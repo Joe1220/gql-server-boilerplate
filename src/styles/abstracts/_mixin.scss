@@ -37,3 +37,28 @@
     }
   }
 }
+
+@mixin hover--color--change($changed) {
+  &:hover,
+  &:focus {
+    color: $changed;
+    text-emphasis: none;
+    transition: all ease-out 0.25s;
+  }
+}
+
+@mixin hover--background--change($changed) {
+  &:hover,
+  &:focus {
+    background: $changed;
+    text-emphasis: none;
+    transition: all ease-out 0.25s;
+  }
+}
+
+@mixin base--disabled--btn {
+  &.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}

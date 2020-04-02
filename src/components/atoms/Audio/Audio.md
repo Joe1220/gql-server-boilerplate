@@ -3,15 +3,12 @@ Basic Usage:
 ```jsx
 import React, { useState } from "react"
 import Audio from "./"
+import { useAudioHooks } from "src/components/atoms/Audio/hooks"
 
-const [play, setPlay] = useState(false)
-const customClick = () => {
-  console.log("w")
-  setPlay(!play)
-}
+const { _ref, play, handlePlay, handleOnEnded } = useAudioHooks()
 
 ;<div>
-  <button onClick={customClick}>play audio</button>
-  <Audio isPlaying={play} src={"/musics/beautiful_piano.mp3"} />
+  <button onClick={handlePlay}>play audio</button>
+  <Audio isPlaying={play} src={"/musics/beautiful_piano.mp3"} ref={_ref} />
 </div>
 ```

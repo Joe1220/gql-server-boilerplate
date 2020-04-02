@@ -13,6 +13,7 @@ $black: #000000;
 $blue: #0073aa;
 $medium-blue: #00a0d2;
 $clear: transparent;
+$modal-overlay: rgba(0, 0, 0, 0.16);
 
 $accent-red: #dc3232;
 $accent-orange: #f56e28;
@@ -32,6 +33,7 @@ $light-blue: #4092d2;
 $dark-blue: #2c5f88;
 $ultra-blue: #1f3f58;
 $bright-blue: #30ceff;
+$light-red: #ff8484;
 
 /// Container's maximum width
 /// @type Length
@@ -39,10 +41,13 @@ $max-width: 1180px !default;
 
 // padding & margin
 $display-padding: 1rem;
-$display-content-margin: 2rem;
+$display-content-margin: 0.5rem;
+$display-lg-margin: $display-content-margin * 2.25;
 
 // some style
 $base-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+$base-border: 1px solid $base-grey;
+$base-border-radius: 0.5rem;
 
 // $font-size-sm effects the font size of the body text
 $font-size-sm: 1rem !default; // Assumes the browser default, typically `16px`
@@ -50,6 +55,9 @@ $font-size-base: 1.25rem !default;
 $font-size-lg: 3rem !default;
 $font-size-xlg: $font-size-sm * 4.25 !default;
 $font-size-xxlg: $font-size-sm * 10.875 !default;
+
+/* height */
+$base-select-height: 40px;
 
 /* responsive mixin */
 $tablet-landscape-min: 1024px;
