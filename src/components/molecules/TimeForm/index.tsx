@@ -1,19 +1,14 @@
 import React from "react"
 import classNames from "classnames/bind"
 
-import styles from "./_WatchForm.scss"
-import { handleTimerNum } from "src/store/modules/time/utils"
+import styles from "./_TimeForm.scss"
+import { handleTimeAdjust } from "src/store/modules/time/utils"
+import { ITimeFormProps } from "./types"
 
 const cx = classNames.bind(styles)
 
-type IProps = {
-  milliseconds: number
-  /** small일 경우 labs에서 사용될 작은 형태 */
-  size?: string
-}
-
-const WatchForm: React.FC<IProps> = ({ milliseconds, size = "" }) => {
-  let changedTime = handleTimerNum(milliseconds)
+const TimeForm: React.FC<ITimeFormProps> = ({ milliseconds = 0, size = "", isShowMs = true }) => {
+  let changedTime = handleTimeAdjust(milliseconds)
   let hours = changedTime.hours
   let mins = changedTime.mins
   let secs = changedTime.secs
@@ -25,9 +20,9 @@ const WatchForm: React.FC<IProps> = ({ milliseconds, size = "" }) => {
       <span className={secondsClass}>
         {hours}:{mins}:{secs}
       </span>
-      <span className={millisecondsClass}>:{msecs}</span>
+      {isShowMs ? <span className={millisecondsClass}>:{msecs}</span> : null}
     </span>
   )
 }
 
-export default WatchForm
+export default TimeForm

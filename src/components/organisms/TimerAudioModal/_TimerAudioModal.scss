@@ -1,0 +1,20 @@
+@import "src/styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_mixin.scss";
+
+.o__audiomodal__container {
+  align-items: center;
+  justify-content: center;
+  .o__audiomodal__title {
+    color: $light-grey;
+    opacity: 0.8;
+  }
+  .o__audiomodal__button {
+    background: $accent-red;
+    color: $white;
+    width: 100%;
+    @include hover--background--change($light-red);
+  }
+  .o__audiomodal__content {
+    padding: $display-padding;
+  }
+}

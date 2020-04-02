@@ -14,6 +14,9 @@ const Navigation: React.FC = () => (
       <Link href="/timer" className={styles["o__nav__link"]}>
         <h5>Timer</h5>
       </Link>
+      <Link href="/" className={styles["o__nav__link"]}>
+        <h5>Stop_Watch</h5>
+      </Link>
     </div>
     <div className={styles["o__nav__content--mobile"]}>
       <NavMenuToggle />

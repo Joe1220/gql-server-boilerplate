@@ -14,7 +14,7 @@ import {
   timeStopStop,
   timeStopLab
 } from "src/store/modules/time/actions"
-import WatchForm from "src/components/molecules/WatchForm"
+import TimeForm from "src/components/molecules/TimeForm"
 import WatchLabs from "src/components/organisms/WatchLabs"
 
 type IProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
@@ -34,14 +34,21 @@ const IndexPage: NextPage<IProps> = ({
   return (
     <Layout>
       <div className={dSyles["t__clocklayout__panel"]}>
-        <WatchForm milliseconds={milliseconds} />
+        <p className={dSyles["t__clocklayout__title"]}>stop watch</p>
+        <TimeForm milliseconds={milliseconds} />
         <div>
           {isRunning ? (
-            <Button className={styles["mainpage__btn--lab"]} onClick={() => timeStopLab()}>
+            <Button
+              className={styles["mainpage__btn--lab"] + " " + dSyles["t__clocklayout__btn"]}
+              onClick={() => timeStopLab()}
+            >
               lab
             </Button>
           ) : (
-            <Button className={styles["mainpage__btn--reset"]} onClick={() => timeStopReset()}>
+            <Button
+              className={styles["mainpage__btn--reset"] + " " + dSyles["t__clocklayout__btn"]}
+              onClick={() => timeStopReset()}
+            >
               reset
             </Button>
           )}

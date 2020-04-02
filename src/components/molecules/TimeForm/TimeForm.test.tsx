@@ -1,12 +1,12 @@
 import React from "react"
 import { render } from "@testing-library/react"
 
-import WatchForm from "./"
+import TimeForm from "."
 
-describe("<WatchForm />", () => {
+describe("<TimeForm />", () => {
   const milliseconds = 666666
   it("matches snapshot", () => {
-    const instance = render(<WatchForm milliseconds={milliseconds} />)
+    const instance = render(<TimeForm milliseconds={milliseconds} />)
     expect(instance.container).toMatchSnapshot()
   })
 })
