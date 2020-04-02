@@ -6,7 +6,8 @@ import {
   timeStopStop,
   timerReset,
   timerEdit,
-  timerStop
+  timerStop,
+  timerAudioStart
 } from "./actions"
 import { TIME_STOP_START, TIMER_START, TIMER_STOP } from "./types"
 import { RootState } from "src/store/reducer"
@@ -54,6 +55,7 @@ export function countdown(secs: number) {
   })
 }
 
+/** stop 버튼을 위한 event처리 */
 export function* timerStopFork(chan: EventChannel<any>) {
   yield take(TIMER_STOP)
   yield put(timerStop())
@@ -70,13 +72,12 @@ export function* handleTimerRequest() {
       if (yield select(getTimerRunning)) {
         const secs = yield take(chan)
         yield put(timerEdit(secs))
+        /** running 후 milliseconds 0일때 event 처리 */
+        if (secs <= 0) {
+          yield put(timerStop())
+          yield put(timerAudioStart())
+        }
       }
-      // stop이벤트가 발생되어도 secs가 minus되는 issue로 인해, 위해서 fork로 stop이벤트 처리
-      // else {
-      //   chan.close()
-      //   yield put(timerStop())
-      //   break
-      // }
     }
   } catch (error) {
     console.log("time stop error: ", error)
@@ -87,7 +88,6 @@ export function* handleTimerRequest() {
 export default function*() {
   while (true) {
     yield takeEvery(TIME_STOP_START, handleTimeStopRequest)
-    yield take(TIMER_START)
-    yield call(handleTimerRequest)
+    yield takeEvery(TIMER_START, handleTimerRequest)
   }
 }

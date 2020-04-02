@@ -1,5 +1,6 @@
 import { createReducer } from "typesafe-actions"
-import { TIMER_RESET_TIME, MILLISECONDS_SECOND } from "./config"
+import { MILLISECONDS_SECOND, MILLISECONDS_HOUR } from "./config"
+import { audioList } from "src/components/organisms/TimerModal/datas"
 
 import {
   TIME_STOP_START,
@@ -15,16 +16,17 @@ import {
   TIMER_EDIT,
   TIMER_TICK,
   TIMER_RESET_EDIT,
-  TIMER_AUDIO_EDIT
+  TIMER_AUDIO_EDIT,
+  TIMER_AUDIO_START
 } from "./types"
 
 const initialState: TimeState = {
   timer: {
-    milliseconds: TIMER_RESET_TIME,
-    resetMilliseconds: TIMER_RESET_TIME,
+    milliseconds: MILLISECONDS_HOUR,
+    resetMilliseconds: MILLISECONDS_HOUR,
     isRunning: false,
-    audio: null,
-    audioPlaying: false
+    audio: audioList[0].value,
+    audioRunning: false
   },
   timeStop: { milliseconds: 0, startNow: 0, isRunning: false, labs: [] }
 }
@@ -88,7 +90,9 @@ export default createReducer<TimeState, TimeAction>(initialState, {
     timer: {
       ...state.timer,
       milliseconds: state.timer.resetMilliseconds,
-      isRunning: false
+      audio: audioList[0].value,
+      isRunning: false,
+      audioRunning: false
     }
   }),
   [TIMER_STOP]: state => ({
@@ -116,8 +120,16 @@ export default createReducer<TimeState, TimeAction>(initialState, {
     ...state,
     timer: {
       ...state.timer,
-      audioPlaying: false,
       audio: action.payload
+    }
+  }),
+  [TIMER_AUDIO_START]: state => ({
+    ...state,
+    timer: {
+      ...state.timer,
+      milliseconds: state.timer.resetMilliseconds,
+      isRunning: false,
+      audioRunning: true
     }
   })
 })
