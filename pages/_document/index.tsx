@@ -14,6 +14,9 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
           <link rel="manifest" href="/favicons/site.webmanifest" />
+          <meta name="author" content="joe1220" />
+          <meta name="keywords" content="timer, redux-saga timer, stop watch" />
+          <meta name="description" content="redux-saga로 작성된 timer, stop watch 입니다." />
           <meta charSet="utf-8" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link
