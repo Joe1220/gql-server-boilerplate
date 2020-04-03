@@ -102,3 +102,6 @@ string props를 사용하기 위해 우선 atoms/Icon내에서 import사용 필�
 ├── docs
 │   ├── webpack.config.js  # styleguidist설정을 위한 webpack
 ```
+
+![1](https://user-images.githubusercontent.com/30386090/78392229-d869cf00-7622-11ea-8957-0d12b848c8ee.PNG)
+![2](https://user-images.githubusercontent.com/30386090/78392231-d9026580-7622-11ea-8b5a-7acfb8a111bb.PNG)
