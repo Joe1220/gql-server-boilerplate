@@ -1,8 +1,8 @@
 {
-  "name": "with-typescript",
+  "name": "fwatch",
   "description": "Frontend boilerplate with Next, Typescript, Redux, Redux-Saga, Scss, Styleguidst",
   "author": {
-    "name": "joe122o",
+    "name": "joe1220",
     "email": "jsh901220@gmail.com",
     "url": "https://github.com/Joe1220/next-redux-scss-bs"
   },
@@ -29,6 +29,7 @@
     "next": "^9.2.0",
     "next-redux-wrapper": "^4.0.1",
     "node-sass": "^4.13.0",
+    "now": "^17.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
