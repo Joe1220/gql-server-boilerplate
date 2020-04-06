@@ -3,7 +3,7 @@ Basic Usage:
 ```jsx
 import Modal from "./"
 import React, { useState } from "react"
-import Icon from "src/components/atoms/Icon"
+import Icon from "src/components/atoms/BaseIcon"
 const [show, setShow] = useState(false)
 const handleShow = () => {
   setShow(!show)

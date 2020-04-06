@@ -5,7 +5,6 @@ export const useOutsideClick = <T extends HTMLDivElement>(
   _ref: RefObject<T | null>
 ) => {
   const handleOutsideClick = (event: any) => {
-    event.preventDefault()
     if (_ref.current && !_ref.current.contains(event.target)) {
       _event()
     }
