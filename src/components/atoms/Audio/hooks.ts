@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 
 /** 음악을 선택할 수 있는 input, 음악을 재생하는 button */
-export const useAudioHooks = () => {
+export const useAudioHooks = (value?: string) => {
   const [play, setPlay] = useState(false)
   const [count, setCount] = useState(3)
   const _ref = useRef<HTMLAudioElement>(null)
@@ -24,17 +24,27 @@ export const useAudioHooks = () => {
     }
   }
 
+  /** audio load */
+  useEffect(() => {
+    if (_ref.current) {
+      _ref.current.load()
+      setPlay(false)
+    }
+  }, [value])
+
   useEffect(() => {
     if (_ref.current) {
       if (play) {
         _ref.current.play()
         setCount(count - 1)
       } else {
+        _ref.current.currentTime = 0
         _ref.current.pause()
       }
     }
     return () => {
       if (_ref.current) {
+        _ref.current.currentTime = 0
         _ref.current.pause()
       }
     }

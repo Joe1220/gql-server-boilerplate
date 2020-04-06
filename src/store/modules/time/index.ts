@@ -16,8 +16,7 @@ import {
   TIMER_EDIT,
   TIMER_TICK,
   TIMER_RESET_EDIT,
-  TIMER_AUDIO_EDIT,
-  TIMER_AUDIO_START
+  TIMER_AUDIO_START,
 } from "./types"
 
 const initialState: TimeState = {
@@ -26,110 +25,103 @@ const initialState: TimeState = {
     resetMilliseconds: MILLISECONDS_HOUR,
     isRunning: false,
     audio: audioList[0].value,
-    audioRunning: false
+    audioRunning: false,
   },
-  timeStop: { milliseconds: 0, startNow: 0, isRunning: false, labs: [] }
+  timeStop: { milliseconds: 0, startNow: 0, isRunning: false, labs: [] },
 }
 
 export default createReducer<TimeState, TimeAction>(initialState, {
-  [TIME_STOP_START]: state => ({
+  [TIME_STOP_START]: (state) => ({
     ...state,
     timeStop: {
       ...state.timeStop,
       startNow: Date.now() - state.timeStop.milliseconds,
-      isRunning: true
-    }
+      isRunning: true,
+    },
   }),
-  [TIME_STOP_STOP]: state => ({
+  [TIME_STOP_STOP]: (state) => ({
     ...state,
     timeStop: {
       ...state.timeStop,
-      isRunning: false
-    }
+      isRunning: false,
+    },
   }),
-  [TIME_STOP_RESET]: state => ({
+  [TIME_STOP_RESET]: (state) => ({
     ...state,
     timeStop: {
       startNow: 0,
       milliseconds: 0,
       isRunning: false,
-      labs: []
-    }
+      labs: [],
+    },
   }),
   [TIME_STOP_TICK]: (state, action) => ({
     ...state,
     timeStop: {
       ...state.timeStop,
-      milliseconds: Date.now() - action.payload
-    }
+      milliseconds: Date.now() - action.payload,
+    },
   }),
-  [TIME_STOP_LAB]: state => ({
+  [TIME_STOP_LAB]: (state) => ({
     ...state,
     timeStop: {
       ...state.timeStop,
-      labs: [...state.timeStop.labs, state.timeStop.milliseconds]
-    }
+      labs: [...state.timeStop.labs, state.timeStop.milliseconds],
+    },
   }),
   // timer
-  [TIMER_START]: state => ({
+  [TIMER_START]: (state) => ({
     ...state,
     timer: {
       ...state.timer,
-      isRunning: true
-    }
+      isRunning: true,
+    },
   }),
-  [TIMER_TICK]: state => ({
+  [TIMER_TICK]: (state) => ({
     ...state,
     timer: {
       ...state.timer,
-      milliseconds: state.timer.milliseconds - MILLISECONDS_SECOND
-    }
+      milliseconds: state.timer.milliseconds - MILLISECONDS_SECOND,
+    },
   }),
-  [TIMER_RESET]: state => ({
+  [TIMER_RESET]: (state) => ({
     ...state,
     timer: {
       ...state.timer,
       milliseconds: state.timer.resetMilliseconds,
       audio: audioList[0].value,
       isRunning: false,
-      audioRunning: false
-    }
+      audioRunning: false,
+    },
   }),
-  [TIMER_STOP]: state => ({
+  [TIMER_STOP]: (state) => ({
     ...state,
     timer: {
       ...state.timer,
-      isRunning: false
-    }
+      isRunning: false,
+    },
   }),
   [TIMER_EDIT]: (state, action) => ({
     ...state,
     timer: {
       ...state.timer,
-      milliseconds: action.payload
-    }
+      ...action.payload,
+    },
   }),
   [TIMER_RESET_EDIT]: (state, action) => ({
     ...state,
     timer: {
       ...state.timer,
-      resetMilliseconds: action.payload
-    }
+      resetMilliseconds: action.payload,
+    },
   }),
-  [TIMER_AUDIO_EDIT]: (state, action) => ({
-    ...state,
-    timer: {
-      ...state.timer,
-      audio: action.payload
-    }
-  }),
-  [TIMER_AUDIO_START]: state => ({
+  [TIMER_AUDIO_START]: (state) => ({
     ...state,
     timer: {
       ...state.timer,
       milliseconds: state.timer.resetMilliseconds,
       isRunning: false,
-      audioRunning: true
-    }
-  })
+      audioRunning: true,
+    },
+  }),
 })

@@ -13,8 +13,8 @@ import { useAudioHooks } from "src/components/atoms/Audio/hooks"
 const cx = classNames.bind(scssStyles)
 
 /** 음악을 선택할 수 있는 input, 음악을 재생하는 button */
-const SelectHook: React.FC<ISelectAudio> = ({ label, value, timerAudioEdit, ...props }) => {
-  const { _ref, play, handlePlay, handleOnEnded } = useAudioHooks()
+const SelectHook: React.FC<ISelectAudio> = ({ label, value, ...props }) => {
+  const { _ref, play, handlePlay, handleOnEnded } = useAudioHooks(value)
   return (
     <div className={cx("m__selectaudio__container")}>
       <label className={cx("m__selectaudio__label")}>{label}</label>

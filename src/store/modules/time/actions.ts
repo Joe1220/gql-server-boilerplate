@@ -12,8 +12,7 @@ import {
   TIMER_STOP,
   TIMER_TICK,
   TIMER_RESET_EDIT,
-  TIMER_AUDIO_EDIT,
-  TIMER_AUDIO_START
+  TIMER_AUDIO_START,
 } from "./types"
 const { createStandardAction } = deprecated
 
@@ -27,7 +26,6 @@ export const timerStart = createStandardAction(TIMER_START)<void>()
 export const timerTick = createStandardAction(TIMER_TICK)<void>()
 export const timerReset = createStandardAction(TIMER_RESET)<void>()
 export const timerStop = createStandardAction(TIMER_STOP)<void>()
-export const timerEdit = createStandardAction(TIMER_EDIT)<number>()
+export const timerEdit = createStandardAction(TIMER_EDIT)<any>()
 export const timerResetEdit = createStandardAction(TIMER_RESET_EDIT)<number>()
-export const timerAudioEdit = createStandardAction(TIMER_AUDIO_EDIT)<string>()
 export const timerAudioStart = createStandardAction(TIMER_AUDIO_START)<void>()

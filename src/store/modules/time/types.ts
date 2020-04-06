@@ -18,6 +18,11 @@ export type Timer = {
   audioRunning: boolean
 }
 
+export type EditTimer = {
+  milliseconds?: number
+  audio?: string
+}
+
 export type TimerTime = "hour" | "minute" | "second"
 export type CalType = "add" | "minus"
 
@@ -33,7 +38,6 @@ export const TIMER_STOP = "time/TIMER_STOP"
 export const TIMER_RESET = "time/TIMER_RESET"
 export const TIMER_EDIT = "time/TIMER_EDIT"
 export const TIMER_RESET_EDIT = "time/TIMER_RESET_EDIT"
-export const TIMER_AUDIO_EDIT = "time/TIMER_AUDIO_EDIT"
 export const TIMER_AUDIO_START = "time/TIMER_AUDIO_START"
 
 export type TimeState = {

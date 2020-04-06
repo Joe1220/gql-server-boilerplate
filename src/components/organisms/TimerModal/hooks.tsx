@@ -53,6 +53,6 @@ export default () => {
     handleAddOrMinus,
     handleTotalTime,
     audio,
-    handleSetAudio
+    handleSetAudio,
   }
 }

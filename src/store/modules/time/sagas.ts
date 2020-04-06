@@ -7,7 +7,7 @@ import {
   timerReset,
   timerEdit,
   timerStop,
-  timerAudioStart
+  timerAudioStart,
 } from "./actions"
 import { TIME_STOP_START, TIMER_START, TIMER_STOP } from "./types"
 import { RootState } from "src/store/reducer"
@@ -18,6 +18,7 @@ export const getTimeStopRunning = (state: RootState) => state.time.timeStop.isRu
 export const getTimeStopStartNow = (state: RootState) => state.time.timeStop.startNow
 export const getTimerRunning = (state: RootState) => state.time.timer.isRunning
 export const getTimerTotal = (state: RootState) => state.time.timer.milliseconds
+export const getAudio = (state: RootState) => state.time.timer.audio
 
 export function* handleTimeStopRequest() {
   try {
@@ -39,7 +40,7 @@ export function* handleTimeStopRequest() {
 }
 
 export function countdown(secs: number) {
-  return eventChannel(emitter => {
+  return eventChannel((emitter) => {
     const iv = setInterval(() => {
       secs -= MILLISECONDS_SECOND
       if (secs > 0) {
@@ -71,7 +72,7 @@ export function* handleTimerRequest() {
     while (true) {
       if (yield select(getTimerRunning)) {
         const secs = yield take(chan)
-        yield put(timerEdit(secs))
+        yield put(timerEdit({ milliseconds: secs }))
         /** running 후 milliseconds 0일때 event 처리 */
         if (secs <= 0) {
           yield put(timerStop())
@@ -85,7 +86,7 @@ export function* handleTimerRequest() {
   }
 }
 
-export default function*() {
+export default function* () {
   while (true) {
     yield takeEvery(TIME_STOP_START, handleTimeStopRequest)
     yield takeEvery(TIMER_START, handleTimerRequest)

@@ -5,7 +5,7 @@ import classNames from "classnames/bind"
 
 import { RootState } from "src/store/reducer"
 import Modal from "src/components/molecules/Modal"
-import { timerEdit, timerResetEdit, timerAudioEdit } from "src/store/modules/time/actions"
+import { timerEdit, timerResetEdit } from "src/store/modules/time/actions"
 import SelectNumInput from "src/components/molecules/SelectNumInput"
 import { IModalProps } from "src/components/molecules/Modal/types"
 import styles from "./_TimerModal.scss"
@@ -31,7 +31,7 @@ const TimerModal: React.FC<IProps> = ({ timerEdit, timerResetEdit, handleClose, 
     handleAddOrMinus,
     handleTotalTime,
     audio,
-    handleSetAudio
+    handleSetAudio,
   } = timeModalHook()
 
   return (
@@ -80,13 +80,12 @@ const TimerModal: React.FC<IProps> = ({ timerEdit, timerResetEdit, handleClose, 
       />
       <Button
         className={cx("o__timermodal__btn", {
-          disabled: hour.value <= 0 && minute.value <= 0 && second.value <= 0
+          disabled: hour.value <= 0 && minute.value <= 0 && second.value <= 0,
         })}
         onClick={() => {
           const totalTime = handleTotalTime()
-          timerEdit(totalTime)
+          timerEdit({ milliseconds: totalTime, audio: audio.value })
           timerResetEdit(totalTime)
-          timerAudioEdit(audio.value)
           handleClose()
         }}
         disabled={hour.value <= 0 && minute.value <= 0 && second.value <= 0}
@@ -98,13 +97,12 @@ const TimerModal: React.FC<IProps> = ({ timerEdit, timerResetEdit, handleClose, 
 }
 
 const mapStateToProps = (state: RootState) => ({
-  milliseconds: state.time.timer.milliseconds
+  milliseconds: state.time.timer.milliseconds,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => ({
   timerEdit: bindActionCreators(timerEdit, dispatch),
   timerResetEdit: bindActionCreators(timerResetEdit, dispatch),
-  timerAudioEdit: bindActionCreators(timerAudioEdit, dispatch)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TimerModal)
