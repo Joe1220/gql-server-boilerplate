@@ -9,7 +9,7 @@ import {
   timerStop,
   timerAudioStart,
 } from "./actions"
-import { TIME_STOP_START, TIMER_START, TIMER_STOP } from "./types"
+import { TIME_STOP_START, TIMER_START, TIMER_STOP, TIMER_RESET } from "./types"
 import { RootState } from "src/store/reducer"
 import { MILLISECONDS_DEALY, MILLISECONDS_SECOND } from "./config"
 import { eventChannel, END, EventChannel } from "redux-saga"
@@ -58,7 +58,7 @@ export function countdown(secs: number) {
 
 /** stop 버튼을 위한 event처리 */
 export function* timerStopFork(chan: EventChannel<any>) {
-  yield take(TIMER_STOP)
+  yield take([TIMER_STOP, TIMER_RESET])
   yield put(timerStop())
   chan.close()
 }
