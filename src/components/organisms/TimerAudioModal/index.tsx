@@ -9,17 +9,19 @@ import styles from "./_TimerAudioModal.scss"
 import { useAudioHooks } from "../../atoms/Audio/hooks"
 
 const AudioModal: React.FC<ITimerAudioModal> = ({ isShow, handleClose, milliseconds, src }) => {
-  const { _ref, handleOnEnded } = useAudioHooks()
+  const { _ref, handleOnEnded, handlePlay } = useAudioHooks({
+    counting: 3,
+    handleOnEndedEvent: () => {
+      handlePlay(false)
+      handleClose()
+    },
+  })
   useEffect(() => {
-    if (_ref.current) {
-      _ref.current.play()
-    }
-    return () => {
-      if (_ref.current) {
-        _ref.current.pause()
-      }
+    if (isShow) {
+      handlePlay(true)
     }
   }, [isShow])
+
   return (
     <div className={styles["o__audiomodal__container"]}>
       <Modal isShow={isShow} handleClose={handleClose}>

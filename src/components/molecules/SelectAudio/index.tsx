@@ -14,7 +14,7 @@ const cx = classNames.bind(scssStyles)
 
 /** 음악을 선택할 수 있는 input, 음악을 재생하는 button */
 const SelectHook: React.FC<ISelectAudio> = ({ label, value, ...props }) => {
-  const { _ref, play, handlePlay, handleOnEnded } = useAudioHooks(value)
+  const { _ref, play, handlePlay, handleOnEnded } = useAudioHooks({ value })
   return (
     <div className={cx("m__selectaudio__container")}>
       <label className={cx("m__selectaudio__label")}>{label}</label>
@@ -26,7 +26,7 @@ const SelectHook: React.FC<ISelectAudio> = ({ label, value, ...props }) => {
           value={value}
           {...props}
         />
-        <Button className={cx("m__selectaudio__btn")} onClick={handlePlay}>
+        <Button className={cx("m__selectaudio__btn")} onClick={() => handlePlay()}>
           {play ? <Icon icon="pause" /> : <Icon icon="play" />}
         </Button>
         <Audio src={value.value} onEnded={handleOnEnded} ref={_ref} />

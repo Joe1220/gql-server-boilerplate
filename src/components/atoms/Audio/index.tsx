@@ -3,7 +3,7 @@ import React, { forwardRef, useEffect } from "react"
 import { IAudio } from "./types"
 
 const AudioComponent: React.FC<IAudio> = (
-  { src = "/musics/beautiful_piano.mp3", onEnded },
+  { src = "/musics/beautiful_piano.mp3", ...props },
   ref
 ) => {
   /** play audio from isPlaying status */
@@ -14,7 +14,7 @@ const AudioComponent: React.FC<IAudio> = (
     }
   }, [src])
   return (
-    <audio onEnded={onEnded} ref={ref}>
+    <audio ref={ref} {...props}>
       <source src={src} />
     </audio>
   )

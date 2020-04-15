@@ -7,3 +7,9 @@ export type IAudio = {
   src: string
   ref?: RefObject<HTMLAudioElement>
 }
+
+export type AudioHookParams = {
+  value?: string
+  counting?: number
+  handleOnEndedEvent?: () => void
+}
