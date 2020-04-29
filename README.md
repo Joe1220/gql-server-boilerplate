@@ -81,6 +81,7 @@ string props를 사용하기 위해 우선 atoms/Icon내에서 import사용 필�
 │   │     ├──  atoms       # atom component list.
 │   │     ├──  molecules   # molecule component list.
 │   │     ├──  organisms   # organisms component list.
+│   │     │       ├──  Timermodal/datas.ts # music list
 │   │     ├──  templates   # template component list.
 │   │     │       ├──  types.ts
 │   │     │       ├──  sagas.ts

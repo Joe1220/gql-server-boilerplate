@@ -1,10 +1,13 @@
 @import "src/styles/abstracts/_variables.scss";
 @import "src/styles/abstracts/_mixin.scss";
 
-.m__watch__container {
-  display: block;
+.m__curtime__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: $watch-font-stack;
-  .m__watch__milliseconds {
+  .m__curtime__meridiem {
+    display: inline;
     font-size: $font-size-xlg;
     &.small {
       font-size: $font-size-sm;
@@ -16,7 +19,7 @@
       font-size: $font-size-lg;
     }
   }
-  .m__watch__clock {
+  .m__curtime__clock {
     font-size: $font-size-xxlg;
     @include responsive--breakpoint($tablet-portrait-max) {
       font-size: $font-size-xlg;
