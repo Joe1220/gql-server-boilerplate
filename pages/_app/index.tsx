@@ -7,6 +7,7 @@ import withRedux from "next-redux-wrapper"
 
 import initialStore, { PersistedStore } from "src/store"
 import "src/styles/index.scss"
+import LoadingSpinner from "src/components/atoms/LoadingSpinner/index"
 
 export interface IProps {
   store: PersistedStore
@@ -17,7 +18,7 @@ class MyApp extends App<IProps> {
     const { Component, pageProps, store } = this.props
     return (
       <Provider store={store}>
-        <PersistGate loading={<div>hello</div>} persistor={store.__persistor}>
+        <PersistGate loading={<LoadingSpinner />} persistor={store.__persistor}>
           <Component {...pageProps} />
           <Head>
             <title>FClock</title>
