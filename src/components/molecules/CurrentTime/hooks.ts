@@ -9,17 +9,20 @@ export const useCurrentTime = ({
   format = "hh",
   isShowMeridiem = false,
 }: CurrentTimeHook) => {
-  const getCurTime = moment().tz(zone)
-  const timeFormat = () => getCurTime.format(format)
+  let getCurTime = moment().tz(zone)
+  let timeUpdate = () => {
+    getCurTime = moment().tz(zone)
+    return getCurTime.format(format)
+  }
   const meridiemFormat = () => getCurTime.format("a")
   const dateFormat = () => getCurTime.format("YYYY-MM-DD ddd")
-  const [curTime, setCurTime] = useState(timeFormat())
+  const [curTime, setCurTime] = useState(timeUpdate())
   const [curMeridiem, setCurMeridiem] = useState(meridiemFormat())
   const [curDate, setCurDate] = useState(dateFormat())
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurTime(timeFormat())
+      setCurTime(timeUpdate())
       if (isShowMeridiem) {
         setCurMeridiem(meridiemFormat())
         setCurDate(dateFormat())
