@@ -12,7 +12,7 @@ export const useCurrentTime = ({
   const getCurTime = moment().tz(zone)
   const timeFormat = () => getCurTime.format(format)
   const meridiemFormat = () => getCurTime.format("a")
-  const dateFormat = () => getCurTime.format("YYYY년 MM월")
+  const dateFormat = () => getCurTime.format("YYYY-MM-DD ddd")
   const [curTime, setCurTime] = useState(timeFormat())
   const [curMeridiem, setCurMeridiem] = useState(meridiemFormat())
   const [curDate, setCurDate] = useState(dateFormat())
