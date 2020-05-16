@@ -4,12 +4,12 @@ import { persistReducer, persistStore } from "redux-persist"
 
 import rootReducer from "./reducer"
 import rootSaga from "./sagas"
+import { isClient } from "src/shared/config"
 
 export type PersistedStore = Store<any, AnyAction> & {
   __persistor?: any
 }
 
-const isClient = typeof window !== "undefined"
 const sagaMiddleware = createSagaMiddleware()
 // middleware list
 const middlewares = [sagaMiddleware]
@@ -33,7 +33,7 @@ export default () => {
     const persistConfig = {
       key: "root",
       storage,
-      blacklist: ["time"]
+      blacklist: ["time"],
     }
     const persistedReducer = persistReducer(persistConfig, rootReducer)
 

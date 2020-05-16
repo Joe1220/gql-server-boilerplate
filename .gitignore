@@ -181,3 +181,4 @@ docs.build/
 #next
 .next/
 # End of https://www.gitignore.io/api/node,sass,react,macos,windows
+.now

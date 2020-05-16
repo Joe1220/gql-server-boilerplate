@@ -1,6 +1,8 @@
-# NEXT REDUX SCSS BOILERPLATE
+# FUNNY TIMER WEB APP
 
 next기반의 timer(clinet)입니다.
+
+- [Server code github 주소](https://github.com/Joe1220/funny_timer_server.git)
 
 ###
 
@@ -31,6 +33,7 @@ yarn style # start styleguidist for project
 
 [Typescript](https://www.typescriptlang.org/), [Javascript](https://www.javascript.com/),
 [`React`](https://github.com/facebook/react)
+[`Graphql`](https://graphql.org/)
 
 ### - State Management
 
@@ -39,8 +42,7 @@ yarn style # start styleguidist for project
 
 ### - API Library
 
-[Axios](https://github.com/axios/axios),
-[Socket.io](https://socket.io/)
+[Apollo](https://www.apollographql.com/),
 
 ### - CSS
 
@@ -92,6 +94,10 @@ string props를 사용하기 위해 우선 atoms/Icon내에서 import사용 필�
 │   │     ├──  sagas.ts    # root reducer.
 │   │     ├──  reducer.ts  # rootReducer
 │   │     ├──  index.tsx   # create store root reducer and root saga
+│   ├── apollo             # redux store
+│   │     ├──  *API        # root reducer.
+│   │     │       ├──  index.ts # queires.ts에 정의된 grapuql query function 사용
+│   │     │       ├──  queries.ts # set query functions
 ├─── pages                 # next의 page 목록
 ├──  next.config.js        # config next webpack
 ├──  tsconfig.json         # config typescript compiler
