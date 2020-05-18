@@ -1,0 +1,40 @@
+@import "src/styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_mixin.scss";
+
+.o__requestmodal__container {
+  align-items: center;
+  justify-content: center;
+  .o__requestmodal__title {
+    opacity: 0.8;
+  }
+  .o__requestmodal__button {
+    background: $light-blue;
+    width: 100%;
+    margin-top: $display-lg-margin;
+    @include hover--background--change($blue);
+  }
+  .o__requestmodal__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    padding: $display-padding;
+    .o__requestmodal__form {
+      width: 100%;
+      .o__requestmodal__error {
+        color: $accent-red;
+      }
+      .o__requestmodal__input {
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $base-grey;
+        margin: $display-padding 0;
+      }
+      .o__requestmodal__textarea {
+        border: 1px solid $base-grey;
+      }
+    }
+  }
+}

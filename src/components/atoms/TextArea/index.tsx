@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react"
-import TextareaAutosize from "react-textarea-autosize"
+import TextareaAutosize from "react-autosize-textarea"
 import classNames from "classnames/bind"
 
 import styles from "./_TextArea.scss"
