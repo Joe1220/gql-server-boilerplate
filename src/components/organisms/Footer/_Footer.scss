@@ -1,0 +1,32 @@
+@import "src/styles/abstracts/_variables.scss";
+@import "src/styles/abstracts/_mixin.scss";
+
+.o__footer__container {
+  background: $black;
+  padding: $display-padding;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: $footer-height;
+  .o__footer__row {
+    min-width: 560px;
+    color: $heavy-grey;
+    font-size: $font-size-sm;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    .o__footer__link {
+      color: $light-grey;
+      margin-left: $display-content-margin;
+    }
+  }
+  .o__footer__request {
+    color: $white;
+    cursor: pointer;
+    margin-top: $display-content-margin * 2;
+    border-top: 1px solid $base-grey;
+  }
+}

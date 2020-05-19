@@ -5,6 +5,9 @@ $base-font-stack: "Source Serif Pro", serif, sans-serif, "Open Sans", "Helvetica
 $watch-font-stack: "Digital7", "Open Sans", "Helvetica Neue Light", "Helvetica", "Arial" !default;
 $base-font-size: 16 !default;
 $watch-font-size: 12rem;
+$footer-height: 100px;
+$nav-height: 100px;
+$template-content-height: calc(100vh - #{$nav-height} - #{$footer-height});
 
 /// Light grey
 /// @type Color

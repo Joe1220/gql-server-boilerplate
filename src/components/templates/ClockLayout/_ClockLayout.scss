@@ -2,7 +2,7 @@
 @import "src/styles/abstracts/_mixin.scss";
 
 .t__clocklayout__container {
-  min-height: 90vh;
+  min-height: 100vh;
   width: 100%;
   @include responsive--breakpoint($tablet-landscape-min) {
     max-height: 100px;
@@ -22,7 +22,7 @@
     margin-right: 10px;
   }
   .t__clocklayout__content {
-    height: 100%;
+    height: $template-content-height;
     padding: $display-padding;
     overflow-y: auto;
     .t__clocklayout__panel {

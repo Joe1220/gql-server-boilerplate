@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: baseline;
   width: 100%;
+  height: $nav-height;
   .o__nav__content--desktop {
     display: flex;
     @include responsive--breakpoint($phone-landscape-max) {
