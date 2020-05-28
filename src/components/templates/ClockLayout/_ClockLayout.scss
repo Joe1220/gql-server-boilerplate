@@ -22,7 +22,7 @@
     margin-right: 10px;
   }
   .t__clocklayout__content {
-    height: $template-content-height;
+    min-height: $template-content-height;
     padding: $display-padding;
     overflow-y: auto;
     .t__clocklayout__panel {
