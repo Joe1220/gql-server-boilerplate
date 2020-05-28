@@ -8,10 +8,10 @@ module.exports = {
     "**/__tests__/**",
     "**/*.test.{js,jsx,ts,tsx}",
     "**/*.spec.{js,jsx,ts,tsx}",
-    "**/*.d.ts"
+    "**/*.d.ts",
   ],
   styleguideComponents: {
-    Wrapper: path.join(__dirname, "docs/Wrapper")
+    Wrapper: path.join(__dirname, "docs/Wrapper"),
   },
   styleguideDir: "docs.build",
   template: {
@@ -19,16 +19,16 @@ module.exports = {
       links: [
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap"
-        }
+          href: "https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap",
+        },
       ],
       links: [
         {
           rel: "stylesheet",
-          src: "build/main.bundle.js"
-        }
-      ]
-    }
+          src: "build/main.bundle.js",
+        },
+      ],
+    },
   },
   sections: [
     {
@@ -38,21 +38,25 @@ module.exports = {
         ,
         {
           name: "Atoms",
-          components: "src/components/atoms/**/*.tsx"
+          components: "src/components/atoms/**/*.tsx",
         },
         {
           name: "Molecules",
-          components: "src/components/molecules/**/*.tsx"
+          components: "src/components/molecules/**/*.tsx",
         },
         {
           name: "Organisms",
-          components: "src/components/organisms/**/*.tsx"
+          components: "src/components/organisms/**/*.tsx",
         },
         {
           name: "Templates",
-          components: "src/components/templates/**/*.tsx"
-        }
-      ]
-    }
-  ]
+          components: "src/components/templates/**/*.tsx",
+        },
+        {
+          name: "ect",
+          components: "src/toastify/**/*.tsx",
+        },
+      ],
+    },
+  ],
 }
