@@ -4,8 +4,8 @@ module.exports = {
   resolve: {
     alias: {
       src: path.resolve(__dirname, "..", "src"),
-      pages: path.resolve(__dirname, "..", "pages")
-    }
+      pages: path.resolve(__dirname, "..", "pages"),
+    },
   },
   module: {
     rules: [
@@ -14,8 +14,8 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         loader: require.resolve("babel-loader"),
         options: {
-          presets: [["react-app", { flow: false, typescript: true }]]
-        }
+          presets: [["react-app", { flow: false, typescript: true }]],
+        },
       },
       {
         test: /\.jpe?g$|\.gif$|\.ico$|\.png$|\.svg|\.woff(2)?|\.eot|\.ttf/,
@@ -23,13 +23,13 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "[name].[md5:hash:hex:6].[ext]"
-            }
-          }
-        ]
+              name: "[name].[md5:hash:hex:6].[ext]",
+            },
+          },
+        ],
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(scss|sass)$/i,
         use: [
           // Creates `style` nodes from JS strings
           "style-loader",
@@ -38,13 +38,27 @@ module.exports = {
             loader: "css-loader",
             options: {
               importLoaders: 1,
-              modules: true
-            }
+              modules: true,
+            },
           },
           // Compiles Sass to CSS
-          "sass-loader"
-        ]
-      }
-    ]
-  }
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          {
+            loader: "css-loader",
+            options: {
+              modules: false,
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
