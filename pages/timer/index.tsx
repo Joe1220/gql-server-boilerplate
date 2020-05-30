@@ -5,7 +5,7 @@ import { connect } from "react-redux"
 
 import Layout from "src/components/templates/ClockLayout"
 import Button from "src/components/atoms/Button"
-import styles from "./_index.scss"
+import styles from "./_timer.scss"
 import dSyles from "src/components/templates/ClockLayout/_ClockLayout.scss"
 import { RootState } from "src/store/reducer"
 import { timerStart, timerReset, timerStop, timerAudioStart } from "src/store/modules/time/actions"
