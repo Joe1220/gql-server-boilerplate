@@ -10,14 +10,26 @@ import {
   faPlay,
   faPause,
   faMinus,
-  faPlus
+  faPlus,
+  faEnvelope
 } from "@fortawesome/free-solid-svg-icons"
 import cx from "classnames"
 
 import { IIconButton } from "./types"
 import styles from "./_Icon.scss"
 
-library.add(faCheckSquare, faAdjust, faCog, faBars, faWindowClose, faPlay, faPause, faMinus, faPlus)
+library.add(
+  faCheckSquare,
+  faAdjust,
+  faCog,
+  faBars,
+  faWindowClose,
+  faPlay,
+  faPause,
+  faMinus,
+  faPlus,
+  faEnvelope
+)
 
 /**
  * Basic Icon Component - use fortawesome
