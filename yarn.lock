@@ -1103,6 +1103,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.8.4":
+  version "7.10.1"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.1.tgz#b6eb75cac279588d3100baecd1b9894ea2840822"
+  integrity sha512-nQbbCbQc9u/rpg1XCxoMYQTbSMVZjCDxErQ1ClCn9Pvcmv1lGads19ep0a2VsEiIJeHqjZley6EQGEC3Yo1xMA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.4.0", "@babel/template@^7.7.0", "@babel/template@^7.8.3":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.8.3.tgz#e02ad04fe262a657809327f578056ca15fd4d1b8"
@@ -2597,11 +2604,6 @@ autoprefixer@^9.6.1, autoprefixer@^9.7.3:
     postcss "^7.0.26"
     postcss-value-parser "^4.0.2"
 
-autosize@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/autosize/-/autosize-4.0.2.tgz#073cfd07c8bf45da4b9fd153437f5bafbba1e4c9"
-  integrity sha512-jnSyH2d+qdfPGpWlcuhGiHmqBJ6g3X+8T+iRwFrHPLVcdoGJE/x6Qicm6aDHfTsbgZKxyV8UU/YB2p4cjKDRRA==
-
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -3639,11 +3641,6 @@ compression@1.7.4, compression@^1.7.4:
     on-headers "~1.0.2"
     safe-buffer "5.1.2"
     vary "~1.1.2"
-
-computed-style@~0.1.3:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/computed-style/-/computed-style-0.1.4.tgz#7f344fd8584b2e425bedca4a1afc0e300bb05d74"
-  integrity sha1-fzRP2FhLLkJb7cpKGvwOMAuwXXQ=
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -7025,13 +7022,6 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-line-height@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/line-height/-/line-height-0.3.1.tgz#4b1205edde182872a5efa3c8f620b3187a9c54c9"
-  integrity sha1-SxIF7d4YKHKl76PI9iCzGHqcVMk=
-  dependencies:
-    computed-style "~0.1.3"
-
 lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
@@ -9181,7 +9171,7 @@ prop-types-exact@1.2.0:
     object.assign "^4.1.0"
     reflect.ownkeys "^0.2.0"
 
-prop-types@15.7.2, prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@15.7.2, prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -9341,15 +9331,6 @@ raw-body@2.4.0:
     http-errors "1.7.2"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
-
-react-autosize-textarea@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/react-autosize-textarea/-/react-autosize-textarea-7.0.0.tgz#4f633e4238de7ba73c1da8fdc307353c50f1c5ab"
-  integrity sha512-rGQLpGUaELvzy3NKzp0kkcppaUtZTptsyR0PGuLotaJDjwRbT0DpD000yCzETpXseJQ/eMsyVGDDHXjXP93u8w==
-  dependencies:
-    autosize "^4.0.2"
-    line-height "^0.3.1"
-    prop-types "^15.5.6"
 
 react-dev-utils@^9.1.0:
   version "9.1.0"
@@ -9570,6 +9551,15 @@ react-styleguidist@^10.3.2:
     unist-util-visit "^2.0.0"
     webpack-dev-server "^3.9.0"
     webpack-merge "^4.2.2"
+
+react-textarea-autosize@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-8.0.1.tgz#fce0dbf6a59b7b9d892c6af40b6be06a29f62c49"
+  integrity sha512-Qs7Lm17F0CIsWeDaUcHPpP22etVQHkayOcMgOXTfVasVToS6G+IL+5a7ECZtbDR2qTgTRIXjYcLmuZUuTX4tNA==
+  dependencies:
+    "@babel/runtime" "^7.8.4"
+    use-composed-ref "^1.0.0"
+    use-latest "^1.0.0"
 
 react-toastify@*:
   version "6.0.5"
@@ -11245,6 +11235,11 @@ trough@^1.0.0:
   dependencies:
     glob "^7.1.2"
 
+ts-essentials@^2.0.3:
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-2.0.12.tgz#c9303f3d74f75fa7528c3d49b80e089ab09d8745"
+  integrity sha512-3IVX4nI6B5cc31/GFFE+i8ey/N2eA0CZDbo6n0yrz0zDX8ZJ8djmU1p+XRz7G3is0F3bB3pu2pAroFdAWQKU3w==
+
 ts-invariant@^0.4.0, ts-invariant@^0.4.4:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.4.4.tgz#97a523518688f93aafad01b0e80eb803eb2abd86"
@@ -11561,6 +11556,18 @@ url@0.11.0, url@^0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
+
+use-composed-ref@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/use-composed-ref/-/use-composed-ref-1.0.0.tgz#bb13e8f4a0b873632cde4940abeb88b92d03023a"
+  integrity sha512-RVqY3NFNjZa0xrmK3bIMWNmQ01QjKPDc7DeWR3xa/N8aliVppuutOE5bZzPkQfvL+5NRWMMp0DJ99Trd974FIw==
+  dependencies:
+    ts-essentials "^2.0.3"
+
+use-latest@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/use-latest/-/use-latest-1.0.0.tgz#c86d2e4893b15f27def69da574a47136d107facb"
+  integrity sha512-CxmFi75KTXeTIBlZq3LhJ4Hz98pCaRKZHCpnbiaEHIr5QnuHvH8lKYoluPBt/ik7j/hFVPB8K3WqF6mQvLyQTg==
 
 use-subscription@1.1.1:
   version "1.1.1"

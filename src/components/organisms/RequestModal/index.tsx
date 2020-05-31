@@ -68,7 +68,7 @@ const RequestModal: React.FC<IRequestModal> = ({ isShow, handleClose }) => {
               placeholder={"내용을 입력해주세요"}
               ref={register({ required: true, minLength: 10, maxLength: 200 })}
             />
-            {errors.body && (
+            {errors.html && (
               <p className={styles["o__requestmodal__error"]}>
                 10글자 이상, 200글자 이하의 본문내용을 작성해주세요.
               </p>

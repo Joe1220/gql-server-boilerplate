@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react"
-import TextareaAutosize from "react-autosize-textarea"
+import TextareaAutosize from "react-textarea-autosize"
 import classNames from "classnames/bind"
 
 import styles from "./_TextArea.scss"
@@ -9,7 +9,7 @@ const cx = classNames.bind(styles)
 
 const Input: React.FC<ITextArea> = ({ onChange, className, notResize, ...props }, ref) => {
   let _className = cx("a__textarea__container", className, {
-    notResize,
+    notResize
   })
   return <TextareaAutosize onChange={onChange} className={_className} ref={ref} {...props} />
 }
